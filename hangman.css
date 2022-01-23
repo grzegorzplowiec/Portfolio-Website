@@ -1,0 +1,136 @@
+/* *******************
+       Hangman
+********************* */
+.body {
+  font-family: "JetBrains Mono", monospace;
+  box-sizing: border-box;
+}
+
+.board {
+  font-size: 40px;
+  font-weight: 600;
+  font-size: clamp(1.2rem, 3.7vw, 2.6rem);
+  padding: 10px 15px;
+  width: 100%;
+  min-height: 110px;
+  text-align: center;
+  margin-bottom: 10px;
+  letter-spacing: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row{
+  padding-top: 40px;
+}
+
+.row-main{
+  height: 400px;
+}
+
+.gallows,
+.keyboard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.gallows {
+  width: 50%;
+  min-width: 280px;
+  position: relative;
+}
+
+.keyboard {
+  padding: 15px;
+  padding-left: 50px;
+  width: 50%;
+  min-width: 280px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  font-size: clamp(0.7rem, 2.7vw, 1.9rem);
+}
+
+.keyboard .letter {
+  width: 4.5vw;
+  max-width: 53px;
+  height: 4.5vw;
+  max-height: 53px;
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid var(--white);
+  border-radius: 20%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: clamp(0.7rem, 2.7vw, 1.9rem);
+  transition: all 0.3s ease;
+}
+
+.keyboard .letter:hover {
+  background-color: #1e84c9;
+  color: #f5f5f5;
+}
+
+.hangman-img {
+  object-fit: contain;
+  position: absolute;
+  border: 4px solid var(--white-alpha-25);
+  border-radius: 20px;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.img0{
+  position: relative;
+  opacity: 1;
+}
+
+span.reset{
+  font-size: clamp(1.0rem, 2.2vw, 2.0rem);
+  font-weight: 400;
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 1vw;
+  background-color: var(--white-alpha-40);
+  transition: all 0.3s ease;
+  letter-spacing: 2px;
+}
+
+span.reset:hover{
+  background-color: var(--main-color);
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+@media (max-width: 648px) {
+  .row{
+    padding-top: 0;
+  }
+
+  .keyboard{
+    padding-left: 15px;
+    width: 80%;
+    font-size: clamp(1.2rem, 2.7vw, 1.9rem);
+  }
+
+  .gallows{
+    width: 80%;
+  }
+
+  .keyboard .letter{
+    width: 7vw;
+    height: 5vw;
+    min-width: 28px;
+    min-height: 28px;
+  }
+
+  .board{
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
