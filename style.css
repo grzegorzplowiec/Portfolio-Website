@@ -715,6 +715,7 @@ button {
 
 .pp-thumbnail {
   overflow: hidden;
+  text-align: center;
 }
 
 .pp-thumbnail img {
